@@ -6,6 +6,7 @@ from core.utils.common_utils import load_json_file
 from core.config import BOOKS_DIR
 from core.utils.gpt_utils import count_tokens
 
+
 def show():
     st.title("⚙️ Asystent AI")
 
@@ -16,7 +17,13 @@ def show():
         return
 
     # Utwórz domyślny obiekt konfiguracji GPT
-    gpt_config = GptConfig(model="gpt-4o-mini", max_tokens=128000, temperature=0.7, output_percentage=0.2, prompt_percentage=0.8)
+    gpt_config = GptConfig(
+        model="gpt-4o-mini",
+        max_tokens=128000,
+        temperature=0.7,
+        output_percentage=0.2,
+        prompt_percentage=0.8,
+    )
 
     st.subheader(f"Książka: {selected_book.title}")
     st.markdown("Wygeneruj opracowanie książki za pomocą AI.")
@@ -39,4 +46,6 @@ def show():
     else:
         st.error("📏 Książka zbyt długa, aby ją streścić przy obecnej konfiguracji.")
         token_count = count_tokens(selected_book.content)
-        st.markdown(f"**Tokeny w książce: {token_count}\tMaksymalna liczba tokenów do przetworzenia: {gpt_config.prompt_percentage * gpt_config.max_tokens}**")
+        st.markdown(
+            f"**Tokeny w książce: {token_count}\tMaksymalna liczba tokenów do przetworzenia: {gpt_config.prompt_percentage * gpt_config.max_tokens}**"
+        )

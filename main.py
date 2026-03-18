@@ -1,9 +1,15 @@
 # WAŻNE - PROGRAM KORZYSTA Z BIBLIOTEKI OPENAI==0.28
-from core.services.books import book_index_raw_service, book_detail_service, book_index_service, book_service, book_browsing_service
+from core.services.books import (
+    book_index_raw_service,
+    book_detail_service,
+    book_index_service,
+    book_service,
+    book_browsing_service,
+)
 from core.services.gpt.gpt_service import GptService
 from core import setup
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     # """
     # Budowa środowiska.
@@ -29,4 +35,3 @@ if __name__ == '__main__':
     # GPT
 
     gpt_service = GptService()
-

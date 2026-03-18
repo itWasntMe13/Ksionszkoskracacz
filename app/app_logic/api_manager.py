@@ -6,6 +6,7 @@ from io import BytesIO
 from core.config.config import OPENAI_VERSION
 from app.app_logic.file_manager import append_file, save_image
 
+
 # Klasa do obsługi API dla GPT-3.5
 class GPTPrompt:
     def __init__(self, prompt, api_key, model, token_limit):
@@ -15,7 +16,9 @@ class GPTPrompt:
         self.prompt = prompt  # Zapytanie do API
         self.response = None  # Odpowiedź z API
         self.cost = None  # Przybliżony koszt zapytania i odpowiedzi
-        self.input_tokens = self.count_tokens(prompt)  # Liczbę tokenów w zapytaniu można wyliczyć od razu
+        self.input_tokens = self.count_tokens(
+            prompt
+        )  # Liczbę tokenów w zapytaniu można wyliczyć od razu
         self.output_tokens = None  # Liczba tokenów w odpowiedzi
 
     # Metoda wyświetlająca informacje o obiekcie
@@ -29,7 +32,9 @@ class GPTPrompt:
         )
 
     # Funkcja odbierająca odpowiedź i generująca informacje o zapytaniu
-    def get_gpt(self, system_role, save_info, save_response, save_debug=False, save_to=None):
+    def get_gpt(
+        self, system_role, save_info, save_response, save_debug=False, save_to=None
+    ):
         self.response = self.__send_prompt(system_role, save_debug)
         # self.output_tokens = self.count_tokens(self.response)
         # self.cost = self.__cost()
@@ -54,16 +59,18 @@ class GPTPrompt:
 
     # Funkcja zapisująca do pliku pełne informacje o zapytaniu i odpowiedzi
     def __save_response_info(self, save_to):
-        content = (f"Response: {self.response}\n"
-                   f"Cost: {self.cost}\n"
-                   f"Input tokens: {self.input_tokens}\n"
-                   f"Output tokens: {self.output_tokens}")
+        content = (
+            f"Response: {self.response}\n"
+            f"Cost: {self.cost}\n"
+            f"Input tokens: {self.input_tokens}\n"
+            f"Output tokens: {self.output_tokens}"
+        )
         save_to = f"{save_to}/responses_full.txt"
         append_file(save_to, content)
         print(f"Zapisano informacje zapytania/odpowiedzi w {save_to}")
 
     # Funkcja do wysłania zapytania do API
-    def __send_prompt(self, system_role, save_debug,save_debug_to=None):
+    def __send_prompt(self, system_role, save_debug, save_debug_to=None):
         try:
             print(f"Wysyłanie zapytania do {self.model}...")
             # Jeśli wersja openai jest starsza niż 1.0.0
@@ -73,12 +80,12 @@ class GPTPrompt:
                     model=self.model,
                     messages=[
                         {"role": "system", "content": system_role},
-                        {"role": "user", "content": self.prompt}
+                        {"role": "user", "content": self.prompt},
                     ],
                     max_tokens=1000,
                     n=1,
                     stop=None,
-                    temperature=0.7
+                    temperature=0.7,
                 )
             else:
                 response = openai.completions.create(
@@ -87,10 +94,10 @@ class GPTPrompt:
                     max_tokens=1000,
                     n=1,
                     stop=None,
-                    temperature=0.7
+                    temperature=0.7,
                 )
 
-            if response: # Czy odpowiedź istnieje
+            if response:  # Czy odpowiedź istnieje
                 print("Odebrano odpowiedź...")
 
             # Zapisanie informacji debugowania
@@ -99,7 +106,7 @@ class GPTPrompt:
                 append_file(f"{save_debug_to}/log.txt", content)
                 print(f"Zapisano dane debug w {save_debug_to}/log.txt")
 
-            response = response['choices'][0]['message']['content'].strip()
+            response = response["choices"][0]["message"]["content"].strip()
             return response
         except Exception as e:
             return f"An error occurred while sending a prompt to GPT-3.5 Turbo: {e}"
@@ -120,7 +127,19 @@ class GPTPrompt:
 
 # Klasa do obsługi API dla DALL-E
 class DALLEPrompt:
-    def __init__(self, prompt, api_key, model, size, n, save_info_to, save_img, save_info, save_url, save_prompt):
+    def __init__(
+        self,
+        prompt,
+        api_key,
+        model,
+        size,
+        n,
+        save_info_to,
+        save_img,
+        save_info,
+        save_url,
+        save_prompt,
+    ):
         openai.api_key = api_key  # Ustawienie klucza API dla openai
         self.model = model  # Model AI, w projekcie używamy DALL-E 2.0
         self.prompt = prompt  # Zapytanie do API
@@ -130,7 +149,9 @@ class DALLEPrompt:
         self.URL = None  # URL obrazka
         self.cost = self.__cost()  # Przybliżony koszt zapytania i odpowiedzi
         self.img = None  # Obrazek z odpowiedzi
-        self.save_info_to = save_info_to  # Ścieżka do zapisu informacji o zapytaniu i odpowiedzi
+        self.save_info_to = (
+            save_info_to  # Ścieżka do zapisu informacji o zapytaniu i odpowiedzi
+        )
         self.save_img = save_img  # Czy zapisać obrazek
         self.save_info = save_info  # Czy zapisać informacje
         self.save_url = save_url  # Czy zapisać URL
@@ -138,11 +159,7 @@ class DALLEPrompt:
 
     # Metoda wyświetlająca informacje o obiekcie
     def __str__(self):
-        return (
-            f"Prompt: {self.prompt}\n"
-            f"Cost: {self.cost}\n"
-            f"URL: {self.URL}\n"
-        )
+        return f"Prompt: {self.prompt}\n" f"Cost: {self.cost}\n" f"URL: {self.URL}\n"
 
     def get_dalle(self):
         self.response = self.__send_prompt()
@@ -173,7 +190,7 @@ class DALLEPrompt:
 
             # Jeśli odpowiedź nie jest słownikiem to zwróć komunikat-przydatne do debugowania
             if not isinstance(response, dict):
-                print('Response is not a dictionary')
+                print("Response is not a dictionary")
 
             # Zapisanie informacji debugowania
             content = f"Prompt: {self.prompt}\nResponse: {response}"
@@ -190,7 +207,7 @@ class DALLEPrompt:
         if isinstance(self.response, dict):
             try:
                 # Zwracamy pierwszy URL z listy "data"
-                return self.response['data'][0]['url']
+                return self.response["data"][0]["url"]
             except (KeyError, IndexError):
                 return "URL not found in the response"
         else:
@@ -199,7 +216,7 @@ class DALLEPrompt:
     # Funkcja pobierająca images z odpowiedzi
     def __download_img(self) -> PIL.Image:
         # print("URL: " + self.URL) # Do debugowania-wyświetla URL z pliku
-        print("Pobieranie obrazka...") # Komunikat dla użytkownika
+        print("Pobieranie obrazka...")  # Komunikat dla użytkownika
         response = requests.get(self.URL)
         # print(response)  # Do debugowania - przy poprawnym działaniu zwraca <Response [200]>
         response.raise_for_status()  # Sprawdza, czy odpowiedź HTTP jest błędem
@@ -213,7 +230,7 @@ class DALLEPrompt:
 
         if img:
             print("Zapisywanie obrazka przez file_manager...")  # Do debugowania
-            save_image(img) # Zapisz obraz do pliku
+            save_image(img)  # Zapisz obraz do pliku
 
     # Funkcja zapisująca URL odpowiedzi do pliku
     def __save_response_url(self, save_info_to):
@@ -225,9 +242,11 @@ class DALLEPrompt:
     # Funkcja zapisująca informacje o zapytaniu i odpowiedzi do pliku
     def __save_response_info(self, save_info_to):
         # Dopisanie informacji do pliku
-        content = (f"Prompt: {self.prompt}\n"
-                   f"Response URL: {self.response}\n"
-                   f"Cost: {self.cost}\n")
+        content = (
+            f"Prompt: {self.prompt}\n"
+            f"Response URL: {self.response}\n"
+            f"Cost: {self.cost}\n"
+        )
         save_info_to = f"{save_info_to}_info.txt"
         append_file(save_info_to, content)
 

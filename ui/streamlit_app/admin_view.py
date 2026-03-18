@@ -1,12 +1,16 @@
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 import streamlit as st
 from core.services.common.maintenance_service import MaintenanceService
 
+
 def show():
     st.title("🛠️ Panel administracyjny")
-    st.markdown("Opcje zarządzania aplikacją. Niektóre funkcjonalności pozwalają na serwisowe rozwiązywanie problemów aplikacji.")
+    st.markdown(
+        "Opcje zarządzania aplikacją. Niektóre funkcjonalności pozwalają na serwisowe rozwiązywanie problemów aplikacji."
+    )
 
     st.subheader("Zarządzanie książkami.")
 

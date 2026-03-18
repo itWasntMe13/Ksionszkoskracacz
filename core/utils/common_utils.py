@@ -15,6 +15,7 @@ def save_json_file(data, file_path):
     except Exception as e:
         print(f"Wystąpił błąd podczas zapisywania danych do pliku: {e}")
 
+
 def save_txt_file(data, file_path):
     """
     Zapisuje dane do pliku TXT (a przynajmniej na ten moment nie ma innych zastosowań).
@@ -30,6 +31,7 @@ def save_txt_file(data, file_path):
             file_stream.write(data)
     except Exception as e:
         print(f"Wystąpił błąd podczas zapisywania danych do pliku: {e}")
+
 
 def load_json_file(file_path):
     """
@@ -51,6 +53,7 @@ def load_json_file(file_path):
         print(f"Wystąpił nieoczekiwany błąd: {e}")
         return None
 
+
 def load_txt_file(file_path):
     """
     Wczytuje plik TXT i zwraca jego zawartość.
@@ -68,6 +71,7 @@ def load_txt_file(file_path):
         print(f"Wystąpił nieoczekiwany błąd: {e}")
         return None
 
+
 def json_request(url):
     """
     Pobiera dane z API w formacie JSON.
@@ -82,6 +86,7 @@ def json_request(url):
     except requests.RequestException as e:
         print(f"Wystąpił błąd podczas pobierania danych z API: {e}")
         return None
+
 
 def txt_request(url):
     """

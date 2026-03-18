@@ -1,5 +1,6 @@
 from importlib.metadata import version, PackageNotFoundError
 
+
 def check_openai_version() -> str:
     """
     Sprawdza wersję zainstalowanej biblioteki openai.
@@ -13,6 +14,7 @@ def check_openai_version() -> str:
         print("Biblioteka openai nie jest zainstalowana.")
         return None
 
+
 def count_tokens(text: str, model: str = "gpt-4") -> int:
     """
     Zlicza liczbę tokenów w tekście.
@@ -22,10 +24,10 @@ def count_tokens(text: str, model: str = "gpt-4") -> int:
     """
     try:
         import tiktoken
+
         encoding = tiktoken.encoding_for_model(model)
         tokens = len(encoding.encode(text))
         return tokens
     except ImportError:
         print("Biblioteka tiktoken nie jest zainstalowana.")
         return None
-

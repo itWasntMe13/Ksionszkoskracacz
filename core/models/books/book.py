@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 @dataclass
 class Book:
     slug: str
@@ -28,7 +29,7 @@ class Book:
             "summary": self.summary,
             "characters": self.characters,
             "test_questions": self.test_questions,
-            "motifs": self.motifs
+            "motifs": self.motifs,
         }
 
     @staticmethod
@@ -45,5 +46,5 @@ class Book:
             summary=data.get("summary"),
             characters=data.get("characters"),
             test_questions=data.get("test_questions"),
-            motifs=data.get("motifs")
+            motifs=data.get("motifs"),
         )

@@ -2,10 +2,13 @@ from core.config.config import BOOKS_INDEX_PATH, BOOKS_INDEX_RAW_PATH
 from core.models.books.book_index import BookIndex
 from core.utils.common_utils import load_json_file, save_json_file
 
+
 class BookIndexService:
 
     @staticmethod
-    def create_books_index_json(save_path=BOOKS_INDEX_PATH, raw_index_path=BOOKS_INDEX_RAW_PATH) -> None:
+    def create_books_index_json(
+        save_path=BOOKS_INDEX_PATH, raw_index_path=BOOKS_INDEX_RAW_PATH
+    ) -> None:
         """
         Tworzy plik JSON z indeksem książek na podstawie surowego indeksu pobranego z API Wolnych Lektur.
         :param save_path:
@@ -46,5 +49,12 @@ class BookIndexService:
         :param books_index_List:
         :return:
         """
-        book_index = next((book_index for book_index in books_index_List if book_index.slug == slug_to_find), None)
+        book_index = next(
+            (
+                book_index
+                for book_index in books_index_List
+                if book_index.slug == slug_to_find
+            ),
+            None,
+        )
         return book_index

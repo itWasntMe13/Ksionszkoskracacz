@@ -1,17 +1,17 @@
 class BookIndex:
     def __init__(
-            self,
-            full_sort_key: str,
-            title: str,
-            url: str,
-            author: str,
-            epoch: str,
-            genre: str,
-            kind: str,
-            slug: str,
-            href: str,
-            downloaded: bool = False,
-            path_to_file: str = None
+        self,
+        full_sort_key: str,
+        title: str,
+        url: str,
+        author: str,
+        epoch: str,
+        genre: str,
+        kind: str,
+        slug: str,
+        href: str,
+        downloaded: bool = False,
+        path_to_file: str = None,
     ):
         self.full_sort_key = full_sort_key
         self.title = title
@@ -36,7 +36,7 @@ class BookIndex:
             genre=data["genre"],
             url=data["url"],
             href=data["href"],
-            slug=data["slug"]
+            slug=data["slug"],
         )
 
     def to_dict(self) -> dict:

@@ -26,7 +26,9 @@ class GptService:
         else:
             return False
 
-    def summarize_text(self, gpt_config: GptConfig, text: str, system_prompt: str = None) -> str:
+    def summarize_text(
+        self, gpt_config: GptConfig, text: str, system_prompt: str = None
+    ) -> str:
         prompt = system_prompt or "Stwórz streszczenie edukacyjne załączonego tekstu."
         model = gpt_config.model
 
@@ -34,9 +36,9 @@ class GptService:
             model=model,
             messages=[
                 {"role": "system", "content": prompt},
-                {"role": "user", "content": text}
+                {"role": "user", "content": text},
             ],
             temperature=0.7,
-            max_tokens=1024
+            max_tokens=1024,
         )
         return response.choices[0].message.content

@@ -7,7 +7,7 @@ from streamlit import title, button
 
 from core.models.books.book import Book
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 from core.config.config import BOOKS_DIR
 from core.utils.common_utils import load_json_file
@@ -15,6 +15,7 @@ from core.services.books.book_index_service import BookIndexService
 from core.services.books.book_browsing_service import BookBrowsingService
 from core.services.books.book_detail_service import BookDetailService
 from core.services.books.book_service import BookService
+
 
 def show():
     # Tytuł aplikacji
@@ -24,8 +25,8 @@ def show():
     # Pobieramy indeks książek z pamięci sesji
     book_index_list = BookIndexService.load_books_index_json()
 
-    title_query = st.text_input("**Tytuł**", "") # Query do wyszukiwania tytułów
-    author_query = st.text_input("**Autor**", "") # Query do wyszukiwania autorów
+    title_query = st.text_input("**Tytuł**", "")  # Query do wyszukiwania tytułów
+    author_query = st.text_input("**Autor**", "")  # Query do wyszukiwania autorów
     # Usuwamy białe znaki z początku i końca
     title_query = title_query.strip()
     author_query = author_query.strip()
@@ -36,9 +37,13 @@ def show():
                 book_index_list, ["title", "author"], f"{title_query} – {author_query}"
             )
         elif title_query and not author_query:
-            matches = BookBrowsingService.search_books_by_attrs(book_index_list, ["title"], title_query)
+            matches = BookBrowsingService.search_books_by_attrs(
+                book_index_list, ["title"], title_query
+            )
         elif author_query and not title_query:
-            matches = BookBrowsingService.search_books_by_attrs(book_index_list, ["author"], author_query)
+            matches = BookBrowsingService.search_books_by_attrs(
+                book_index_list, ["author"], author_query
+            )
 
         if matches:
             options = [f"{book.title} - {book.author}" for book in matches]
@@ -59,7 +64,9 @@ def show():
                 st.markdown(f"🧾 **Rodzaj:** {book_detail.kind}")
 
                 if not book_detail.txt_url:
-                    st.error("🚫 Książka niedostępna w formacie TXT. Spróbuj później lub wybierz inną.")
+                    st.error(
+                        "🚫 Książka niedostępna w formacie TXT. Spróbuj później lub wybierz inną."
+                    )
                 else:
                     # Ścieżka do pliku JSON z obiektem Book
                     book_path = BOOKS_DIR / f"{book_detail.slug}.json"
@@ -74,7 +81,9 @@ def show():
 
                     # Pobieranie książki
                     if st.button("⬇️ Pobierz książkę"):
-                        book_obj = BookService.create_book_object(book_detail, save=True)
+                        book_obj = BookService.create_book_object(
+                            book_detail, save=True
+                        )
                         st.session_state["selected_book"] = book_obj
                         book_content = book_obj.content
                         st.success("✅ Książka została pobrana i zapisana.")
@@ -115,5 +124,5 @@ def show():
             📚 Wszystkie książki pochodzą z serwisu <a href="https://wolnelektury.pl" target="_blank">Wolne Lektury</a> • © Michał Rakoczy
         </div>
         """,
-        unsafe_allow_html=True
+        unsafe_allow_html=True,
     )

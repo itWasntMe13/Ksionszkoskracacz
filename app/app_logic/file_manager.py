@@ -11,34 +11,37 @@ def load_file(path):
     except Exception as e:
         return f"An error occurred while loading a file: {e}"
 
+
 # Funkcja dodająca treść do pliku o podanej ścieżce
 def append_file(path, content):
     # Jeśli plik nie istnieje, zostanie utworzony
     if not glob.glob(path):
         try:
             with open(path, "w", encoding="utf-8") as file:
-                file.write(f"{datetime.datetime.now}\n") # Dodajemy datę i godzinę
-                file.write(content) # Dodajemy treść
-                file.write("\n" + "-" * 50 + "\n\n") # Dodajemy znacznik końca wpisu
+                file.write(f"{datetime.datetime.now}\n")  # Dodajemy datę i godzinę
+                file.write(content)  # Dodajemy treść
+                file.write("\n" + "-" * 50 + "\n\n")  # Dodajemy znacznik końca wpisu
         except Exception as e:
             return f"An error occurred while creating a new file: {e}"
     else:
         try:
             with open(path, "a", encoding="utf-8") as file:
-                file.write(f"{datetime.datetime.now()}\n") # Dodajemy datę i godzinę
-                file.write(content) # Dodajemy treść
-                file.write("\n" + "-" * 50 + "\n\n") # Dodajemy znacznik końca wpisu
+                file.write(f"{datetime.datetime.now()}\n")  # Dodajemy datę i godzinę
+                file.write(content)  # Dodajemy treść
+                file.write("\n" + "-" * 50 + "\n\n")  # Dodajemy znacznik końca wpisu
         except Exception as e:
             return f"An error occurred while appending to an existing file: {e}"
+
 
 # Funkcja zapisująca treść do pliku o podanej ścieżce
 def save_file(path, content):
     try:
         with open(path, "w", encoding="utf-8") as file:
-            file.write(f"{datetime.datetime.now()}\n") # Dodajemy datę i godzinę
-            file.write(content) # Dodajemy treść
+            file.write(f"{datetime.datetime.now()}\n")  # Dodajemy datę i godzinę
+            file.write(content)  # Dodajemy treść
     except Exception as e:
         return f"An error occurred: {e}"
+
 
 # Funkcja tworząca folder o podanej ścieżce
 def create_folder(path):
@@ -46,6 +49,7 @@ def create_folder(path):
         os.makedirs(path, exist_ok=True)
     except Exception as e:
         return f"An error occurred while creating a folder: {e}"
+
 
 # Funkcja łącząca kawałki streszczeń w jeden string
 def merge_txt_files(path) -> str:

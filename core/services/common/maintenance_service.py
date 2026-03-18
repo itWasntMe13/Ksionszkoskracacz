@@ -2,13 +2,21 @@ import os
 from pathlib import Path
 from pandas.io.common import file_exists
 
-from core.config.config import BOOKS_DIR, BOOK_DETAILS_DIR, REQUIRED_DIRS, BOOKS_INDEX_RAW_PATH, BOOKS_INDEX_PATH
+from core.config.config import (
+    BOOKS_DIR,
+    BOOK_DETAILS_DIR,
+    REQUIRED_DIRS,
+    BOOKS_INDEX_RAW_PATH,
+    BOOKS_INDEX_PATH,
+)
 from core.services.books import book_index_raw_service, book_index_service
+
 
 class MaintenanceService:
     """
     Funkcje pomocnicze pozwalające na resetowanie stanu aplikacji z poziomu jej interfejsu.
     """
+
     @staticmethod
     def clear_books_dir(directory=BOOKS_DIR):
         """
