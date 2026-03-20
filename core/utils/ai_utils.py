@@ -1,5 +1,7 @@
 from importlib.metadata import version, PackageNotFoundError
 
+from core.config.unified_ai_config import UnifiedAiConfig
+
 
 def check_openai_version() -> str:
     """
@@ -14,12 +16,11 @@ def check_openai_version() -> str:
         print("Biblioteka openai nie jest zainstalowana.")
         return None
 
-
-def count_tokens(text: str, model: str = "gpt-4") -> int:
+def count_gpt_tokens(text: str, model: str) -> int:
     """
     Zlicza liczbę tokenów w tekście.
     :param text:
-    :param model: Model OpenAI, domyślnie "gpt-4"
+    :param model: Model AI
     :return:
     """
     try:

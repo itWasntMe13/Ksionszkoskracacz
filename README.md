@@ -16,7 +16,7 @@ pip install -r requirements.txt
 streamlit run ui/streamlit_app/main.py\
 **By default the app will be on: http://localhost:8501**
 
-### Important note for editing Streamlit front app: If you edit anything other than main.py, then Streamlit might have some trouble with detecting/reruning those changes. I recommend killing the process from CMD and reruning it from IDE terminal.
+### Important note for editing Streamlit front app: If you edit anything other than main.py, then Streamlit might have some trouble with detecting/reruning these changes. I recommend killing the process from CMD and reruning it from IDE terminal.
 **Kill the process**\
 taskkill /f /im streamlit.exe\
 **Rerun from IDE**\

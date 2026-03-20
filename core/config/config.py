@@ -59,3 +59,7 @@ REQUIRED_DIRS = [
 GPT_CONFIG_PATH = (
     PROJECT_ROOT / "core/config/gpt_config.json"
 )  # Ścieżka do pliku konfiguracyjnego GPT
+
+GEMINI_CONFIG_PATH = (
+    PROJECT_ROOT / "core/config/gemini_config.json"
+)   # Ścieżka do pliku konfiguracyjnego Gemini

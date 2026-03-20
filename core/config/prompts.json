@@ -1,7 +1,9 @@
 {
   "summary": {
     "name": "summary",
-    "prompt": "Stwórz streszczenie poniższego tekstu dla uczniów liceum..."
+    "role": "Przybierając rolę twórcy treści edukacyjnych dla młodzieży.",
+    "task": "Napisz streszczenie szczegółowe wysłanej książki:",
+    "format": "Streszczenie zwróć jako tekst w formie bezosobowej. Nie zamieszczaj żadnych wiadomości do mnie, ponieważ streszczenie zostanie wykorzystane w aplikacji, w związku z czym musi ono być wyłącznie streszczeniem w czystej postaci."
   },
   "characters": {
     "name": "characters",

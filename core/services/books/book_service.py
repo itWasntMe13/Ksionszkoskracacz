@@ -1,11 +1,11 @@
 import os
 
 from core.config.config import BOOKS_DIR
-from core.config.gpt import GptConfig
+from core.config.gpt_config import GptConfig
 from core.utils.common_utils import txt_request, save_json_file
 from core.services.books.book_detail_service import BookDetail
 from core.models.books.book import Book
-from core.utils.gpt_utils import count_tokens
+from core.utils.ai_utils import count_gpt_tokens
 
 
 class BookService:
