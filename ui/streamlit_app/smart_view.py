@@ -14,7 +14,7 @@ def show():
         return
 
     # Konfiguracja AI
-    ai_service = CommonAiService('Gemini')
+    ai_service = CommonAiService("Gemini")
 
     st.subheader(f"Książka: {selected_book.title}")
     st.markdown("Wygeneruj opracowanie książki za pomocą AI.")
@@ -22,8 +22,10 @@ def show():
     if ai_service.is_summarizable(selected_book.content):
         # Koszt streszczenia
         token_count = ai_service.count_tokens(selected_book.content)
-        cost = token_count * 0.000002 / 1000 # Do poprawienia
-        st.markdown(f"**Koszt streszczenia: {cost:.2f} PLN\tTokeny: {token_count}**\t Model: {ai_service.config.provider}")
+        cost = token_count * 0.000002 / 1000  # Do poprawienia
+        st.markdown(
+            f"**Koszt streszczenia: {cost:.2f} PLN\tTokeny: {token_count}**\t Model: {ai_service.config.provider}"
+        )
         if st.button("📄 Wygeneruj streszczenie"):
             with st.spinner("Generuję streszczenie..."):
                 summary = ai_service.summarize_text(selected_book.content)
@@ -38,4 +40,4 @@ def show():
         token_count = ai_service.count_tokens(selected_book.content)
         st.markdown(
             f"**Tokeny w książce: {token_count}\tMaksymalna liczba tokenów do przetworzenia: {ai_service.config.max_tokens}**"
-        ) # Do poprawienia
+        )  # Do poprawienia

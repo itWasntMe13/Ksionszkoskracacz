@@ -3,6 +3,7 @@ from core.config.config import PROJECT_ROOT
 from core.config.unified_ai_config import UnifiedAiConfig
 from core.utils.common_utils import load_json_file
 
+
 @dataclass
 class GeminiConfig:
     model: str
@@ -15,14 +16,14 @@ class GeminiConfig:
 
     def to_unified(self):
         return UnifiedAiConfig(
-            provider='Gemini',
+            provider="Gemini",
             model_name=self.model,
             api_key=self.api_key,
             max_tokens=self.max_output_tokens,
             total_context_limit=self.total_context_limit,
             temperature=self.temperature,
             output_percentage=self.output_percentage,
-            prompt_percentage=self.prompt_percentage
+            prompt_percentage=self.prompt_percentage,
         )
 
     def to_dict(self):

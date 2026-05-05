@@ -7,17 +7,17 @@ from core.utils.common_utils import load_json_file
 
 class AiConfigService:
     @staticmethod
-    def load_config(provider: str = 'Gemini') -> UnifiedAiConfig:
+    def load_config(provider: str = "Gemini") -> UnifiedAiConfig:
         """
         Na podstawie wyboru modelu przez użytkownika, wczytuje jego konfigurację do klasy UnifiedAiConfig.
         :return: Obiekt klasy UnifiedAiConfig
         """
-        if provider == 'Gemini':
+        if provider == "Gemini":
             path = GEMINI_CONFIG_PATH
             g_config = GeminiConfig.from_dict(load_json_file(path))
             config = g_config.to_unified()
             return config
-        elif provider == 'GPT':
+        elif provider == "GPT":
             path = GPT_CONFIG_PATH
             g_config = GptConfig.from_dict(load_json_file(path))
             config = g_config.to_unified()

@@ -25,74 +25,84 @@ def show():
     # Pobieramy indeks książek z pamięci sesji
     book_index_list = BookIndexService.load_books_index_json()
 
-    title_query = st.text_input("**Tytuł**", "")  # Query do wyszukiwania tytułów
-    author_query = st.text_input("**Autor**", "")  # Query do wyszukiwania autorów
-    # Usuwamy białe znaki z początku i końca
-    title_query = title_query.strip()
-    author_query = author_query.strip()
+    # Inicjalizacja stanów sesji
+    if "matches" not in st.session_state:
+        st.session_state.matches = []
+    if "selected_book" not in st.session_state:
+        st.session_state.selected_book = None
 
-    if title_query or author_query:
-        if title_query and author_query:
-            matches = BookBrowsingService.search_books_by_attrs(
-                book_index_list, ["title", "author"], f"{title_query} – {author_query}"
-            )
-        elif title_query and not author_query:
-            matches = BookBrowsingService.search_books_by_attrs(
-                book_index_list, ["title"], title_query
-            )
-        elif author_query and not title_query:
-            matches = BookBrowsingService.search_books_by_attrs(
-                book_index_list, ["author"], author_query
-            )
+    with st.form("search_form", clear_on_submit=False):
+        col_a, col_t = st.columns(2)
 
-        if matches:
-            options = [f"{book.title} - {book.author}" for book in matches]
-            selected = st.selectbox("Wybierz książkę:", options)
+        with col_a:
+            author_input = st.text_input("Autor", key="author_search").strip()
+        with col_t:
+            title_input = st.text_input("Tytuł", key="title_search").strip()
 
-            if selected:
-                selected_index = options.index(selected)
-                chosen_book = matches[selected_index]
+        submit = st.form_submit_button("Filtruj")
 
-                # Pobieramy detale książki, która została wybrana
-                BookDetailService.download_book_details_json(chosen_book)
-                book_detail = BookDetailService.load_book_details_json(chosen_book)
+    if submit:
+        st.session_state.matches = BookBrowsingService.filter_books(book_index_list, author_input, title_input)
 
-                st.markdown(f"### 📘 {book_detail.title}")
-                st.markdown(f"👤 **Autor:** {book_detail.author}")
-                st.markdown(f"📚 **Gatunek:** {book_detail.genre}")
-                st.markdown(f"📜 **Epoka:** {book_detail.epoch}")
-                st.markdown(f"🧾 **Rodzaj:** {book_detail.kind}")
+        if not st.session_state.matches:
+            st.warning("Brak dopasowań.")
 
-                if not book_detail.txt_url:
-                    st.error(
-                        "🚫 Książka niedostępna w formacie TXT. Spróbuj później lub wybierz inną."
+    if st.session_state.matches:
+        options = [f"{b.author} - {b.title}" for b in st.session_state.matches]
+
+        # Odzyskujemy indeks
+        saved_index = st.session_state.get("saved_book_index", 0)
+        saved_index = saved_index if saved_index < len(options) else 0
+
+        selected = st.selectbox("Wybierz książkę:", options, index=saved_index, key="book_selector")
+
+        if selected:
+            # Zapis wyboru, który przetrwa skakanie po widokach
+            st.session_state["saved_book_index"] = options.index(selected)
+
+            selected_index = options.index(selected)
+            chosen_book = st.session_state.matches[selected_index]
+
+            # Pobieramy detale książki, która została wybrana
+            BookDetailService.download_book_details_json(chosen_book)
+            book_detail = BookDetailService.load_book_details_json(chosen_book)
+
+            st.markdown(f"### 📘 {book_detail.title}")
+            st.markdown(f"👤 **Autor:** {book_detail.author}")
+            st.markdown(f"📚 **Gatunek:** {book_detail.genre}")
+            st.markdown(f"📜 **Epoka:** {book_detail.epoch}")
+            st.markdown(f"🧾 **Rodzaj:** {book_detail.kind}")
+
+            if not book_detail.txt_url:
+                st.error(
+                    "🚫 Książka niedostępna w formacie TXT. Spróbuj później lub wybierz inną."
+                )
+            else:
+                # Ścieżka do pliku JSON z obiektem Book
+                book_path = BOOKS_DIR / f"{book_detail.slug}.json"
+                book_content = None
+
+                # Jeśli książka już istnieje lokalnie
+                if book_path.exists():
+                    st.info("Książka już pobrana — wczytuję z lokalnego pliku.")
+                    book_dict = load_json_file(book_path)
+                    st.session_state["selected_book"] = Book.from_dict(book_dict)
+                    book_content = book_dict.get("content")
+
+                # Pobieranie książki
+                if st.button("⬇️ Pobierz książkę"):
+                    book_obj = BookService.create_book_object(
+                        book_detail, save=True
                     )
-                else:
-                    # Ścieżka do pliku JSON z obiektem Book
-                    book_path = BOOKS_DIR / f"{book_detail.slug}.json"
-                    book_content = None
+                    st.session_state["selected_book"] = book_obj
+                    book_content = book_obj.content
+                    st.success("✅ Książka została pobrana i zapisana.")
 
-                    # Jeśli książka już istnieje lokalnie
-                    if book_path.exists():
-                        st.info("Książka już pobrana — wczytuję z lokalnego pliku.")
-                        book_dict = load_json_file(book_path)
-                        st.session_state["selected_book"] = Book.from_dict(book_dict)
-                        book_content = book_dict.get("content")
-
-                    # Pobieranie książki
-                    if st.button("⬇️ Pobierz książkę"):
-                        book_obj = BookService.create_book_object(
-                            book_detail, save=True
-                        )
-                        st.session_state["selected_book"] = book_obj
-                        book_content = book_obj.content
-                        st.success("✅ Książka została pobrana i zapisana.")
-
-                    # Wyświetlanie treści książki, jeśli jest dostępna
-                    if book_content:
-                        st.markdown("---")
-                        st.subheader("📖 Treść książki")
-                        st.text_area("📝 Podgląd treści:", book_content, height=500)
+                # Wyświetlanie treści książki, jeśli jest dostępna
+                if book_content:
+                    st.markdown("---")
+                    st.subheader("📖 Treść książki")
+                    st.text_area("📝 Podgląd treści:", book_content, height=500)
 
     st.markdown(
         """

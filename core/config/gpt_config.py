@@ -5,6 +5,7 @@ from core.config.unified_ai_config import UnifiedAiConfig
 from core.utils.common_utils import load_json_file
 from core.utils.ai_utils import check_openai_version
 
+
 @dataclass
 class GptConfig:
     model: str

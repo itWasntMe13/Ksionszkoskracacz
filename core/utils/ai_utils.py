@@ -16,6 +16,7 @@ def check_openai_version() -> str:
         print("Biblioteka openai nie jest zainstalowana.")
         return None
 
+
 def count_gpt_tokens(text: str, model: str) -> int:
     """
     Zlicza liczbę tokenów w tekście.

@@ -62,4 +62,4 @@ GPT_CONFIG_PATH = (
 
 GEMINI_CONFIG_PATH = (
     PROJECT_ROOT / "core/config/gemini_config.json"
-)   # Ścieżka do pliku konfiguracyjnego Gemini
+)  # Ścieżka do pliku konfiguracyjnego Gemini

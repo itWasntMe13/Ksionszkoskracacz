@@ -5,12 +5,13 @@ from core.config.unified_ai_config import UnifiedAiConfig, PROMPTS
 from core.services.common.common_ai_config_service import AiConfigService
 from core.utils.ai_utils import count_gpt_tokens
 
+
 class CommonAiService:
     def __init__(self, provider: str):
         self.config = AiConfigService.load_config(provider)
-        if self.config.provider == 'Gemini':
+        if self.config.provider == "Gemini":
             self.ai_client = GeminiService(self.config)
-        elif self.config.provider == 'GPT':
+        elif self.config.provider == "GPT":
             self.ai_client = GptService(self.config)
         else:
             raise ValueError(f"Nieznany provider: {self.config.provider}")
@@ -24,6 +25,7 @@ class CommonAiService:
 
     def summarize_text(self, text: str) -> str:
         return self.ai_client.summarize_text(text)
+
 
 class GeminiService:
     def __init__(self, unified_config: UnifiedAiConfig):
@@ -41,24 +43,29 @@ class GeminiService:
             return 0
 
     def summarize_text(self, text: str) -> str:
-        prompt = PROMPTS["summary"]["role"] + PROMPTS["summary"]["task"] + PROMPTS["summary"]["format"] + "TREŚĆ KSIĄŻKI:" + text # Konkatenujemy role, tekst, zadanie i format
+        prompt = (
+            PROMPTS["summary"]["role"]
+            + PROMPTS["summary"]["task"]
+            + PROMPTS["summary"]["format"]
+            + "TREŚĆ KSIĄŻKI:"
+            + text
+        )  # Konkatenujemy role, tekst, zadanie i format
 
         response = self.model.generate_content(
             prompt,
             generation_config={
                 "temperature": self.config.temperature,
-                "max_output_tokens": self.config.max_tokens
-            }
+                "max_output_tokens": self.config.max_tokens,
+            },
         )
         return response.text
+
 
 class GptService:
     def __init__(self, unified_config: UnifiedAiConfig):
         self.config = unified_config
 
-    def summarize_text(
-        self, text: str, system_prompt: str = None
-    ) -> str:
+    def summarize_text(self, text: str, system_prompt: str = None) -> str:
         prompt = system_prompt or "Stwórz streszczenie edukacyjne załączonego tekstu."
         model = self.config.model_name
 
