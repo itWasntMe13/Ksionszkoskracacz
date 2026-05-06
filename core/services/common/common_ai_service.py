@@ -7,8 +7,12 @@ from core.utils.ai_utils import count_gpt_tokens
 
 
 class CommonAiService:
-    def __init__(self, provider: str):
+    def __init__(self, provider: str, api_key: str):
+        # Tworzymy obiekt konfiguracyjny ogólny
         self.config = AiConfigService.load_config(provider)
+        self.config.api_key = api_key
+
+        # Na podstawie obiektu konfiguracyjnego tworzymy obiekt który będzie komunikował się z AI
         if self.config.provider == "Gemini":
             self.ai_client = GeminiService(self.config)
         elif self.config.provider == "GPT":

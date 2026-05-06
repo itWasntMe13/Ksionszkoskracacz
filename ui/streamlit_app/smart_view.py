@@ -1,8 +1,4 @@
 import streamlit as st
-from core.services.common.common_ai_service import GptService, CommonAiService
-from core.config.gpt_config import GptConfig
-from core.utils.ai_utils import count_gpt_tokens
-
 
 def show():
     st.title("⚙️ Asystent AI")
@@ -12,9 +8,6 @@ def show():
     if not selected_book:
         st.warning("Najpierw wybierz książkę we właściwym widoku.")
         return
-
-    # Konfiguracja AI
-    ai_service = CommonAiService("Gemini")
 
     st.subheader(f"Książka: {selected_book.title}")
     st.markdown("Wygeneruj opracowanie książki za pomocą AI.")
