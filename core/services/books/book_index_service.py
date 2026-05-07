@@ -4,7 +4,6 @@ from core.utils.common_utils import load_json_file, save_json_file
 
 
 class BookIndexService:
-
     @staticmethod
     def create_books_index_json(
         save_path=BOOKS_INDEX_PATH, raw_index_path=BOOKS_INDEX_RAW_PATH

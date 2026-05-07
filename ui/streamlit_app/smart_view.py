@@ -1,7 +1,10 @@
 import streamlit as st
 
+
 def show():
     st.title("⚙️ Asystent AI")
+
+    ai_service = st.session_state["ai_service"]
 
     # Załaduj książkę z kontekstu sesji
     selected_book = st.session_state.get("selected_book", None)

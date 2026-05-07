@@ -1,10 +1,6 @@
 import streamlit as st
 import sys
 import os
-
-from narwhals.selectors import matches
-from streamlit import title, button
-
 from core.models.books.book import Book
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
@@ -20,14 +16,13 @@ from core.services.books.book_service import BookService
 def show():
     # Tytuł aplikacji
     st.title("📚 Przeglądarka Wolnych Lektur")
-    st.markdown("Twoje centrum lektur i wiedzy – powered by 🧠 & ☕")
 
-    # Pobieramy indeks książek z pamięci sesji
+    # Pobieramy indeks książek
     book_index_list = BookIndexService.load_books_index_json()
 
     # Inicjalizacja stanów sesji
-    if "matches" not in st.session_state:
-        st.session_state.matches = []
+    if "matched_books" not in st.session_state:
+        st.session_state.matched_books = []
     if "selected_book" not in st.session_state:
         st.session_state.selected_book = None
 
@@ -42,61 +37,69 @@ def show():
         submit = st.form_submit_button("Filtruj")
 
     if submit:
-        st.session_state.matches = BookBrowsingService.filter_books(book_index_list, author_input, title_input)
+        st.session_state.matched_books = BookBrowsingService.filter_books(
+            book_index_list, author_input, title_input
+        )
 
-        if not st.session_state.matches:
+        if not st.session_state.matched_books:
             st.warning("Brak dopasowań.")
 
-    if st.session_state.matches:
-        options = [f"{b.author} - {b.title}" for b in st.session_state.matches]
+    if st.session_state.matched_books:
+        options = [f"{b.author} - {b.title}" for b in st.session_state.matched_books]
 
-        # Odzyskujemy indeks
+        # Odzyskujemy indeks książki
         saved_index = st.session_state.get("saved_book_index", 0)
         saved_index = saved_index if saved_index < len(options) else 0
 
-        selected = st.selectbox("Wybierz książkę:", options, index=saved_index, key="book_selector")
+        selected = st.selectbox(
+            "Wybierz książkę:", options, index=saved_index
+        )
 
         if selected:
             # Zapis wyboru, który przetrwa skakanie po widokach
             st.session_state["saved_book_index"] = options.index(selected)
 
-            selected_index = options.index(selected)
-            chosen_book = st.session_state.matches[selected_index]
+            chosen_book = st.session_state.matched_books[st.session_state["saved_book_index"]]
 
             # Pobieramy detale książki, która została wybrana
             BookDetailService.download_book_details_json(chosen_book)
             book_detail = BookDetailService.load_book_details_json(chosen_book)
 
-            st.markdown(f"### 📘 {book_detail.title}")
+            st.markdown(f"### **{book_detail.title}**")
             st.markdown(f"👤 **Autor:** {book_detail.author}")
-            st.markdown(f"📚 **Gatunek:** {book_detail.genre}")
-            st.markdown(f"📜 **Epoka:** {book_detail.epoch}")
-            st.markdown(f"🧾 **Rodzaj:** {book_detail.kind}")
+            st.markdown(f"📚 **Gatunek:** {book_detail.genre} 📜 **Epoka:** {book_detail.epoch} 🧾 **Rodzaj:** {book_detail.kind}")
 
             if not book_detail.txt_url:
-                st.error(
-                    "🚫 Książka niedostępna w formacie TXT. Spróbuj później lub wybierz inną."
-                )
+                st.error("🚫 Książka niedostępna w formacie TXT.")
             else:
                 # Ścieżka do pliku JSON z obiektem Book
                 book_path = BOOKS_DIR / f"{book_detail.slug}.json"
                 book_content = None
 
-                # Jeśli książka już istnieje lokalnie
+                # Scenariusz A: Książka już pobrana
                 if book_path.exists():
-                    st.info("Książka już pobrana — wczytuję z lokalnego pliku.")
+                    st.info("Książka już pobrana — możesz ją przejrzeć lub ustawić jako aktywną.")
                     book_dict = load_json_file(book_path)
-                    st.session_state["selected_book"] = Book.from_dict(book_dict)
+
+                    # TYLKO PODGLĄD - nie dotykamy st.session_state.selected_book!
+                    preview_book = Book.from_dict(book_dict)
                     book_content = book_dict.get("content")
 
-                # Pobieranie książki
-                if st.button("⬇️ Pobierz książkę"):
-                    book_obj = BookService.create_book_object(
-                        book_detail, save=True
-                    )
-                    st.session_state["selected_book"] = book_obj
-                    book_content = book_obj.content
-                    st.success("✅ Książka została pobrana i zapisana.")
+                    # PRZYCISK ZATWIERDZENIA KONTEKSTU
+                    if st.button("Ustaw jako aktywną książkę"):
+                        st.session_state.selected_book = preview_book
+                        st.rerun()  # Odświeżenie UI żeby sidebar się zaktualizował
+
+                # Scenariusz B: Książka jeszcze nie pobrana
+                else:
+                    # Pobieranie książki (od razu ustawia jako aktywną po pobraniu)
+                    if st.button("⬇️ Pobierz i ustaw jako aktywną"):
+                        with st.spinner("Pobieranie i analizowanie..."):
+                            book_obj = BookService.create_book_object(book_detail, save=True)
+                            st.session_state.selected_book = book_obj
+                            book_content = book_obj.content
+                            st.success("✅ Książka została pobrana i zapisana.")
+                            st.rerun()
 
                 # Wyświetlanie treści książki, jeśli jest dostępna
                 if book_content:

@@ -37,10 +37,11 @@ class BookBrowsingService:
         filtered = books
 
         if author_q:
-            filtered = [b for b in filtered if author_q.casefold() in b.author.casefold()]
+            filtered = [
+                b for b in filtered if author_q.casefold() in b.author.casefold()
+            ]
 
         if title_q:
             filtered = [b for b in filtered if title_q.casefold() in b.title.casefold()]
-
 
         return filtered

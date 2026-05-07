@@ -2,11 +2,8 @@
 Web app using Wolne Lektury (polish book service) API to download and present some of the first features of my degree project.
 
 ## Quick installation info
-Important note - you need to specify your own **OPENAI_API_KEY** key:\
-If you are using Windows, Streamlit will try to find your GPT API key in:\
-X:/Users/(user)/.streamlit/secrets.toml file.\
-**If you don't have it, create it and add one line - OPENAI_API_KEY = (your_key).**\
-It might be different for you, but I was too lazy to do something more sophisticated.
+API_KEY - you need to create project_folder/.streamlit/secrets.toml file and insert you api keys there.
+App will look for GEMINI_API_KEY and GPT_API_KEY so that's how you should name them.
 
 1. **Create venv if you don't have it already. Pycharm will do it for you: Settings > Python Interpreter  > Add Interpreter > Add local interpreter.**
 2. **Remember to rerun the terminal after configuring venv or it won't behave like it should.** 
