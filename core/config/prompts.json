@@ -5,8 +5,10 @@
     "task": "Napisz streszczenie szczegółowe wysłanej książki:",
     "format": "Streszczenie zwróć jako tekst w formie bezosobowej. Nie zamieszczaj żadnych wiadomości do mnie, ponieważ streszczenie zostanie wykorzystane w aplikacji, w związku z czym musi ono być wyłącznie streszczeniem w czystej postaci."
   },
-  "characters": {
-    "name": "characters",
-    "prompt": "Wypisz główne postacie występujące w tym fragmencie książki..."
+  "characters_overview": {
+    "name": "characters_overview",
+    "role": "Jesteś ekspertem-literaturoznawcą i dydaktykiem przygotowującym profesjonalne materiały pomocnicze dla uczniów.",
+    "task": "Dokonaj analizy postaci występujących w załączonym tekście. Wymień i scharakteryzuj postacie główne oraz istotne postacie poboczne (pomiń postacie epizodyczne bez imion i wpływu na fabułę). Dla każdej postaci podaj jej imię/nazwisko, krótką definicję roli oraz najważniejsze cechy charakteru lub motywacje.",
+    "format": "Zwróć czysty tekst bez żadnych wstępów, komentarzy czy podsumowań. Zastosuj formatowanie: [Imię Postaci] - [Opis]. Każda postać od nowego akapitu. Nie używaj fraz typu 'Oto lista' ani 'Zgodnie z tekstem'. Zacznij bezpośrednio od pierwszej postaci."
   }
 }

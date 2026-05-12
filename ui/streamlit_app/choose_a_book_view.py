@@ -60,6 +60,7 @@ def show():
             chosen_book_index = st.session_state.matched_books[st.session_state["saved_book_index"]]
 
             # Pobieramy detale książki, która została wybrana
+
             BookDetailService.download_book_details_json(chosen_book_index)
             book_detail = BookDetailService.load_book_details_json(chosen_book_index)
 
@@ -103,7 +104,7 @@ def show():
                 if book_content:
                     st.markdown("---")
                     st.subheader("Treść książki")
-                    st.text_area("Podgląd treści:", book_content, height=500)
+                    st.text_area("Podgląd treści:", book_content, height=600)
 
     st.markdown(
         """

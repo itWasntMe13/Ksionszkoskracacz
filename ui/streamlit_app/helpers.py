@@ -1,21 +1,6 @@
 import streamlit as st
-from core.models.books.book import Book
 from core.services.common.common_ai_service import CommonAiService
 from ui.config.providers import AiProviders
-
-
-def set_selected_book(book: Book):
-    st.session_state.selected_book = book
-
-
-# def get_selected_book() -> Optional[Book]:
-#     return st.session_state.get("selected_book", None)
-
-
-def clear_selected_book():
-    if "selected_book" in st.session_state:
-        del st.session_state["selected_book"]
-
 
 def init_ai_service(selected_provider: str):
     # Jeśli instancja AiService nie istnieje w sesji lub jest niezgodna z wyborem użytkownika to budujemy nową

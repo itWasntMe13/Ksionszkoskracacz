@@ -1,5 +1,4 @@
 from app.app_logic import file_manager, api_manager, text_manager
-from core.config import *
 
 
 def get_summary(title, _save_summary) -> str:

@@ -1,7 +1,5 @@
 from dataclasses import dataclass
-from core.config.config import PROJECT_ROOT
 from core.config.unified_ai_config import UnifiedAiConfig
-from core.utils.common_utils import load_json_file
 
 
 @dataclass

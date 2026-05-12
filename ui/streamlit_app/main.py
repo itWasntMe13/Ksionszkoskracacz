@@ -27,7 +27,7 @@ if "selected_book" in st.session_state and st.session_state.selected_book:
 # Sidebar – część nawigacji po aplikacji
 st.sidebar.title("Nawigacja")
 page = st.sidebar.radio(
-    "Wybierz tryb:", ["# Wybór książki", "# Generator streszczeń", "#  Lista bohaterów", "# Admin"]
+    "Wybierz tryb:", ["# Wybór książki", "# Generator streszczeń", "# Lista bohaterów", "# Admin"]
 )
 
 st.sidebar.divider()
