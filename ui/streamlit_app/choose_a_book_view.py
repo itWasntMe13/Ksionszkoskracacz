@@ -14,8 +14,7 @@ from core.services.books.book_service import BookService
 
 
 def show():
-    # Tytuł aplikacji
-    st.title("📚 Przeglądarka Wolnych Lektur")
+    st.title("Wybierz książkę")
 
     # Pobieramy indeks książek
     book_index_list = BookIndexService.load_books_index_json()
@@ -58,19 +57,18 @@ def show():
         if selected:
             # Zapis wyboru, który przetrwa skakanie po widokach
             st.session_state["saved_book_index"] = options.index(selected)
-
-            chosen_book = st.session_state.matched_books[st.session_state["saved_book_index"]]
+            chosen_book_index = st.session_state.matched_books[st.session_state["saved_book_index"]]
 
             # Pobieramy detale książki, która została wybrana
-            BookDetailService.download_book_details_json(chosen_book)
-            book_detail = BookDetailService.load_book_details_json(chosen_book)
+            BookDetailService.download_book_details_json(chosen_book_index)
+            book_detail = BookDetailService.load_book_details_json(chosen_book_index)
 
             st.markdown(f"### **{book_detail.title}**")
-            st.markdown(f"👤 **Autor:** {book_detail.author}")
-            st.markdown(f"📚 **Gatunek:** {book_detail.genre} 📜 **Epoka:** {book_detail.epoch} 🧾 **Rodzaj:** {book_detail.kind}")
+            st.markdown(f"**Autor:** {book_detail.author}")
+            st.markdown(f"**Gatunek:** {book_detail.genre} **Epoka:** {book_detail.epoch} **Rodzaj:** {book_detail.kind}")
 
             if not book_detail.txt_url:
-                st.error("🚫 Książka niedostępna w formacie TXT.")
+                st.error("Książka niedostępna w formacie TXT.")
             else:
                 # Ścieżka do pliku JSON z obiektem Book
                 book_path = BOOKS_DIR / f"{book_detail.slug}.json"
@@ -78,7 +76,7 @@ def show():
 
                 # Scenariusz A: Książka już pobrana
                 if book_path.exists():
-                    st.info("Książka już pobrana — możesz ją przejrzeć lub ustawić jako aktywną.")
+                    st.info("Książka już pobrana - możesz ją przejrzeć lub ustawić jako aktywną.")
                     book_dict = load_json_file(book_path)
 
                     # TYLKO PODGLĄD - nie dotykamy st.session_state.selected_book!
@@ -104,8 +102,8 @@ def show():
                 # Wyświetlanie treści książki, jeśli jest dostępna
                 if book_content:
                     st.markdown("---")
-                    st.subheader("📖 Treść książki")
-                    st.text_area("📝 Podgląd treści:", book_content, height=500)
+                    st.subheader("Treść książki")
+                    st.text_area("Podgląd treści:", book_content, height=500)
 
     st.markdown(
         """

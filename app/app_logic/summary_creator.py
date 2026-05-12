@@ -1,5 +1,4 @@
 from app.app_logic import file_manager, api_manager, text_manager
-from app.books.normalization import normalize_title
 from core.config import *
 
 
