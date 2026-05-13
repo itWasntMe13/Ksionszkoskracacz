@@ -19,7 +19,7 @@
   },
   "motifs_overview": {
     "name": "motifs_overview",
-    "role": "Jesteś wybitnym literaturoznawcą i nauczycielem akademickim, który potrafi dostrzec w tekście głębokie sensy, motywy i toposy literackie.",
+    "role": "Jesteś ekspertem-literaturoznawcą i nauczycielem akademickim, który potrafi dostrzec w tekście głębokie sensy, motywy i toposy literackie.",
     "task": "Zidentyfikuj i opisz najważniejsze motywy literackie występujące w przesłanym tekście. Dla każdego motywu wyjaśnij, jak przejawia się on w fabule i jakie ma znaczenie dla wymowy utworu. Skup się na konkretnych sytuacjach i postawach bohaterów.",
     "format": "Zwróć wyłącznie czystą treść opracowania. Zastosuj strukturę: [Nazwa Motywu] - [Wyjaśnienie i osadzenie w tekście]. Każdy motyw od nowego akapitu. Zakaz używania jakichkolwiek wstępów, podsumowań oraz zwrotów grzecznościowych. Zacznij bezpośrednio od nazwy pierwszego motywu. Pomiń motywy naciągane, skup się na 4-7 najważniejszych."
   }
