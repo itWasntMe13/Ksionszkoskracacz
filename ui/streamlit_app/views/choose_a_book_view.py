@@ -2,10 +2,11 @@ import streamlit as st
 import sys
 import os
 from core.models.books.book import Book
+from pathlib import Path
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..", "..")))
 
-from core.config.config import BOOKS_DIR
+from core.config.config import BOOKS_DIR, BOOK_DETAILS_DIR
 from core.utils.common_utils import load_json_file
 from core.services.books.book_index_service import BookIndexService
 from core.services.books.book_browsing_service import BookBrowsingService
@@ -59,10 +60,16 @@ def show():
             st.session_state["saved_book_index"] = options.index(selected)
             chosen_book_index = st.session_state.matched_books[st.session_state["saved_book_index"]]
 
-            # Pobieramy detale książki, która została wybrana
-
-            BookDetailService.download_book_details_json(chosen_book_index)
-            book_detail = BookDetailService.load_book_details_json(chosen_book_index)
+            # Jeśli istnieje wczytujemy detale, jeśli nie to pobieramy detale książki.
+            book_details_path = Path(BOOK_DETAILS_DIR) / f"{chosen_book_index.slug}.json"
+            if book_details_path.exists():
+                try:
+                    book_detail = BookDetailService.load_book_details_json(chosen_book_index)
+                except Exception as e:
+                    print(f"Wystąpił błąd podczas wczytywania książki.")
+            else:
+                BookDetailService.download_book_details_json(chosen_book_index)
+                book_detail = BookDetailService.load_book_details_json(chosen_book_index)
 
             st.markdown(f"### **{book_detail.title}**")
             st.markdown(f"**Autor:** {book_detail.author}")
@@ -97,44 +104,11 @@ def show():
                             book_obj = BookService.create_book_object(book_detail, save=True)
                             st.session_state.selected_book = book_obj
                             book_content = book_obj.content
-                            st.success("✅ Książka została pobrana i zapisana.")
+                            st.success("Książka została pobrana i zapisana.")
                             st.rerun()
 
                 # Wyświetlanie treści książki, jeśli jest dostępna
                 if book_content:
                     st.markdown("---")
                     st.subheader("Treść książki")
-                    st.text_area("Podgląd treści:", book_content, height=600)
-
-    st.markdown(
-        """
-        <style>
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: #1c1c1e;
-            color: #ccc;
-            text-align: center;
-            padding: 10px;
-            font-size: 0.875rem;
-            box-shadow: 0 -1px 3px rgba(0,0,0,0.4);
-        }
-
-        .footer a {
-            color: #4ba3fa;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        </style>
-
-        <div class="footer">
-            📚 Wszystkie książki pochodzą z serwisu <a href="https://wolnelektury.pl" target="_blank">Wolne Lektury</a> • © Michał Rakoczy
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+                    st.text_area(label="Opracowanie:", value=book_content, height=600, label_visibility="collapsed")

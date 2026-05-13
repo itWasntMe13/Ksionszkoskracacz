@@ -78,18 +78,3 @@ class BookService:
             save_dir_path, f"{book.slug}.json"
         )  # Tworzymy ścieżkę zapisu
         save_json_file(book_dict, save_file_path)
-
-    @staticmethod
-    def split_text_into_fragments(text: str, fragment_length: int = 3000) -> list[str]:
-        """
-        Dzieli tekst na fragmenty o zadanej długości (domyślnie 3000 znaków).
-
-        :param text: Tekst wejściowy do podziału.
-        :param fragment_length: Maksymalna długość pojedynczego fragmentu.
-        :return: Lista fragmentów tekstu.
-        """
-        fragments = []
-        text_length = len(text)
-        for i in range(0, text_length, fragment_length):
-            fragments.append(text[i : i + fragment_length])
-        return fragments

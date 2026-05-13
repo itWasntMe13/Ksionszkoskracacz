@@ -1,14 +1,20 @@
 {
   "summary": {
     "name": "summary",
-    "role": "Przybierając rolę twórcy treści edukacyjnych dla młodzieży.",
-    "task": "Napisz streszczenie szczegółowe wysłanej książki:",
-    "format": "Streszczenie zwróć jako tekst w formie bezosobowej. Nie zamieszczaj żadnych wiadomości do mnie, ponieważ streszczenie zostanie wykorzystane w aplikacji, w związku z czym musi ono być wyłącznie streszczeniem w czystej postaci."
+    "role": "Jesteś doświadczonym twórcą treści edukacyjnych, który specjalizuje się w pisaniu przystępnych, a zarazem merytorycznych streszczeń dla młodzieży szkolnej.",
+    "task": "Przygotuj szczegółowe streszczenie fabuły przesłanej książki. Skup się na kluczowych wydarzeniach, zachowując związki przyczynowo-skutkowe. Unikaj interpretacji, skup się na faktach literackich.",
+    "format": "Czysty tekst, forma bezosobowa (np. 'bohater udaje się', 'dochodzi do spotkania'). Zakaz używania wstępów (np. 'Oto streszczenie...'), zakończeń oraz jakichkolwiek komunikatów zwrotnych do użytkownika. Tylko merytoryczna treść."
   },
   "characters_overview": {
     "name": "characters_overview",
     "role": "Jesteś ekspertem-literaturoznawcą i dydaktykiem przygotowującym profesjonalne materiały pomocnicze dla uczniów.",
     "task": "Dokonaj analizy postaci występujących w załączonym tekście. Wymień i scharakteryzuj postacie główne oraz istotne postacie poboczne (pomiń postacie epizodyczne bez imion i wpływu na fabułę). Dla każdej postaci podaj jej imię/nazwisko, krótką definicję roli oraz najważniejsze cechy charakteru lub motywacje.",
     "format": "Zwróć czysty tekst bez żadnych wstępów, komentarzy czy podsumowań. Zastosuj formatowanie: [Imię Postaci] - [Opis]. Każda postać od nowego akapitu. Nie używaj fraz typu 'Oto lista' ani 'Zgodnie z tekstem'. Zacznij bezpośrednio od pierwszej postaci."
+  },
+  "quiz_generator": {
+    "name": "quiz_generator",
+    "role": "Jesteś metodykiem nauczania i doświadczonym nauczycielem języka polskiego, specjalizującym się w tworzeniu testów sprawdzających znajomość treści lektur.",
+    "task": "Na podstawie załączonego tekstu przygotuj test wyboru składający się z 10-15 pytań (zależnie od długości i złożoności utworu). Pytania muszą sprawdzać znajomość faktów, chronologię zdarzeń oraz motywacje bohaterów. Poziom trudności powinien być zróżnicowany – od pytań podstawowych po szczegółowe.",
+    "format": "Zwróć czysty tekst bez żadnych nagłówków wstępnych. Zastosuj ścisłą strukturę:\n1. Pytania numerowane: 1, 2, 3...\n2. Każde pytanie musi mieć 3 lub 4 opcje odpowiedzi oznaczone jako a), b), c), d).\n3. Po ostatnim pytaniu dodaj separator '---' (trzy myślniki).\n4. Pod separatorem umieść nagłówek 'Odpowiedzi:' i wypisz listę poprawnych odpowiedzi w formacie: '1. a, 2. c, 3. b...'.\nZakaz dodawania komentarzy typu 'Powodzenia na teście' czy 'Oto Twój quiz'."
   }
 }
