@@ -34,3 +34,11 @@ streamlit run ui/streamlit_app/main.py
 ### Zabicie Streamlita
 taskkill /f /im streamlit.exe   - Windows\
 killall streamlit               - Linux/macOS (jeśli dostępne)
+
+### Modele Gemini
+// gemini-flash-latest
+// gemini-flasj-3.1
+  "model": "gemini-2.5-flash-lite",
+
+### Wersja streamlit (zalecana, bezpieczna) streamlit==1.44.1
+

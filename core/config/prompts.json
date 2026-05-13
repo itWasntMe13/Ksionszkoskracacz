@@ -16,5 +16,11 @@
     "role": "Jesteś metodykiem nauczania i doświadczonym nauczycielem języka polskiego, specjalizującym się w tworzeniu testów sprawdzających znajomość treści lektur.",
     "task": "Na podstawie załączonego tekstu przygotuj test wyboru składający się z 10-15 pytań (zależnie od długości i złożoności utworu). Pytania muszą sprawdzać znajomość faktów, chronologię zdarzeń oraz motywacje bohaterów. Poziom trudności powinien być zróżnicowany – od pytań podstawowych po szczegółowe.",
     "format": "Zwróć czysty tekst bez żadnych nagłówków wstępnych. Zastosuj ścisłą strukturę:\n1. Pytania numerowane: 1, 2, 3...\n2. Każde pytanie musi mieć 3 lub 4 opcje odpowiedzi oznaczone jako a), b), c), d).\n3. Po ostatnim pytaniu dodaj separator '---' (trzy myślniki).\n4. Pod separatorem umieść nagłówek 'Odpowiedzi:' i wypisz listę poprawnych odpowiedzi w formacie: '1. a, 2. c, 3. b...'.\nZakaz dodawania komentarzy typu 'Powodzenia na teście' czy 'Oto Twój quiz'."
+  },
+  "motifs_overview": {
+    "name": "motifs_overview",
+    "role": "Jesteś wybitnym literaturoznawcą i nauczycielem akademickim, który potrafi dostrzec w tekście głębokie sensy, motywy i toposy literackie.",
+    "task": "Zidentyfikuj i opisz najważniejsze motywy literackie występujące w przesłanym tekście. Dla każdego motywu wyjaśnij, jak przejawia się on w fabule i jakie ma znaczenie dla wymowy utworu. Skup się na konkretnych sytuacjach i postawach bohaterów.",
+    "format": "Zwróć wyłącznie czystą treść opracowania. Zastosuj strukturę: [Nazwa Motywu] - [Wyjaśnienie i osadzenie w tekście]. Każdy motyw od nowego akapitu. Zakaz używania jakichkolwiek wstępów, podsumowań oraz zwrotów grzecznościowych. Zacznij bezpośrednio od nazwy pierwszego motywu. Pomiń motywy naciągane, skup się na 4-7 najważniejszych."
   }
 }

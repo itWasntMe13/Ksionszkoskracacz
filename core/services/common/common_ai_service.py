@@ -43,6 +43,8 @@ class CommonAiService:
     def generate_characters_overview(self, text: str) -> str:
         return self.ai_client.generate_characters_overview(text)
 
+    def generate_motifs_overview(self, text: str) -> str:
+        return self.ai_client.generate_motifs_overview(text)
+
     def generate_quiz(self, text: str) -> str:
         return self.ai_client.generate_quiz(text)
-

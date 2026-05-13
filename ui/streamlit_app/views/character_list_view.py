@@ -1,16 +1,15 @@
 import streamlit as st
 
-def show():
-    st.title("Bohaterzy utworu")
+st.title("Bohaterzy utworu")
 
-    # Ładujemy dane z pamięci sesji
-    ai_service = st.session_state["ai_service"]
-    selected_book = st.session_state.get("selected_book", None)
+# Ładujemy dane z pamięci sesji
+ai_service = st.session_state["ai_service"]
+selected_book = st.session_state.get("selected_book", None)
 
-    # Logika wyświetlania
-    if not selected_book:
-        st.warning("Najpierw wybierz książkę.")
-        return
+# Logika wyświetlania
+if not selected_book:
+    st.warning("Najpierw wybierz książkę.")
+else:
     if selected_book.title:
         st.subheader(f"Wybrana książka: {selected_book.title}")
     if ai_service.is_summarizable(selected_book.content):

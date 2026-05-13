@@ -1,26 +1,38 @@
 import sys
 import os
 import streamlit as st
-from pathlib import Path
-from PIL import Image
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 from ui.streamlit_app import helpers
-from ui.streamlit_app.views import admin_view, choose_a_book_view, summary_generator_view, character_list_view, \
-    quiz_generator_view
 from ui.config.providers import AiProviders
 
 # Ustawiamy logo i favicon
 st.set_page_config(page_title="Ksionszkoskracacz", page_icon='ui/img/favicon.ico', layout="wide")
-st.sidebar.image('ui/img/main_logo.png', use_container_width=True)
+# Zwiększamy logo manualnie
+st.html("""
+  <style>
+    [alt=Logo] {
+        height: 150px;
+        width: auto;
+        margin: auto;
+    }
+  </style>
+        """)
+st.logo('ui/img/main_logo.png')
 
-# Sidebar – część nawigacji po aplikacji
-st.sidebar.title("Nawigacja")
-page = st.sidebar.radio(
-    "Wybierz tryb:", ["# Wybór książki", "# Generator streszczeń", "# Lista bohaterów", "# Quiz", "# Admin"]
-)
+# Definiujemy podstrony
+views_path = "./views"
+print(f"{views_path}/choose_a_book_view.py")
+books_view = st.Page(f"{views_path}/choose_a_book_view.py", title="Wybór książki")
+summary_view = st.Page(f"{views_path}/summary_generator_view.py", title="Generator streszczeń")
+character_view = st.Page(f"{views_path}/character_list_view.py", title="Lista bohaterów")
+motifs_view = st.Page(f"{views_path}/motifs_view.py", title="Lista motywów")
+quiz_view = st.Page(f"{views_path}/quiz_generator_view.py", title="Quiz")
+admin_panel_view = st.Page(f"{views_path}/admin_view.py", title="Admin")
 
-st.sidebar.divider()
+pg = st.navigation([books_view, summary_view, character_view, motifs_view ,quiz_view, admin_panel_view], position="sidebar")
+pg.run()
+
 # Jeśli wybrano książkę to wyświetl co to za książka na sidebarze
 if "selected_book" in st.session_state and st.session_state.selected_book:
     book = st.session_state.selected_book
@@ -33,20 +45,9 @@ st.sidebar.divider()
 selected_provider = st.sidebar.selectbox(
     "Silnik AI:", options=[p.value for p in AiProviders]
 )
-# Wywołanie inicjalizatora AiService
-helpers.init_ai_service(selected_provider)
+# Wywołanie inicjalizatora AiService z domyslnym providerem
+helpers.init_ai_service(AiProviders.GEMINI.value)
 
-# Widoki
-if page == "# Wybór książki":
-    choose_a_book_view.show()
-elif page == "# Generator streszczeń":
-    summary_generator_view.show()
-elif page == "# Lista bohaterów":
-    character_list_view.show()
-elif page == "# Quiz":
-    quiz_generator_view.show()
-elif page == "# Admin":
-    admin_view.show()
 
 st.markdown(
     """

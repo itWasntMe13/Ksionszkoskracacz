@@ -1,5 +1,8 @@
 import google.genai as genai
 import logging
+
+from click import prompt
+
 from core.config.unified_ai_config import UnifiedAiConfig, PROMPTS
 
 # Konfiguracja logowania
@@ -55,6 +58,17 @@ class GeminiService:
             f"{PROMPTS['characters_overview']['role']}\n"
             f"{PROMPTS['characters_overview']['task']}\n"
             f"{PROMPTS['characters_overview']['format']}\n\n"
+            f"--- POCZĄTEK TREŚCI KSIĄŻKI ---\n"
+            f"{text}\n"
+            f"--- KONIEC TREŚCI KSIĄŻKI ---"
+        )
+        return self._generate(prompt)
+
+    def generate_motifs_overview(self, text: str) -> str:
+        prompt = (
+            f"{PROMPTS['motifs_overview']['role']}\n"
+            f"{PROMPTS['motifs_overview']['task']}\n"
+            f"{PROMPTS['motifs_overview']['format']}\n\n"
             f"--- POCZĄTEK TREŚCI KSIĄŻKI ---\n"
             f"{text}\n"
             f"--- KONIEC TREŚCI KSIĄŻKI ---"
