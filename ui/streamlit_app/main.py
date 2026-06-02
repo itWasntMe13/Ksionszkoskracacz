@@ -43,7 +43,7 @@ st.sidebar.divider()
 
 # Sidebar
 selected_provider = st.sidebar.selectbox(
-    "Silnik AI:", options=[p.value for p in AiProviders]
+    "Model AI:", options=[p.value for p in AiProviders]
 )
 # Wywołanie inicjalizatora AiService z domyslnym providerem
 helpers.init_ai_service(AiProviders.GEMINI.value)

@@ -7056,6 +7056,23 @@
     },
     {
         "kind": "Epika",
+        "full_sort_key": "balzac honore~0 de$gabinet staroz~1ytnos~0ci$8455",
+        "title": "Gabinet Starożytności",
+        "url": "https://wolnelektury.pl/katalog/lektura/balzac-gabinet-starozytnosci/",
+        "cover_color": "#db4b16",
+        "author": "Honoré de Balzac",
+        "cover": "book/cover/balzac-gabinet-starozytnosci.jpg",
+        "epoch": "Romantyzm",
+        "href": "https://wolnelektury.pl/api/books/balzac-gabinet-starozytnosci/",
+        "has_audio": false,
+        "genre": "Powieść",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/balzac-gabinet-starozytnosci_7aaqmnb.jpg",
+        "slug": "balzac-gabinet-starozytnosci",
+        "cover_thumb": "book/cover_thumb/balzac-gabinet-starozytnosci_tWHaQgH.jpg",
+        "liked": null
+    },
+    {
+        "kind": "Epika",
         "full_sort_key": "balzac honore~0 de$granatka$3620",
         "title": "Granatka",
         "url": "https://wolnelektury.pl/katalog/lektura/balzac-komedia-granatka/",
@@ -10653,9 +10670,9 @@
         "href": "https://wolnelektury.pl/api/books/boccaccio-dekameron/",
         "has_audio": true,
         "genre": "Nowela",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/boccaccio-dekameron_Iz1XbkG.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/boccaccio-dekameron_JY8oiNW.jpg",
         "slug": "boccaccio-dekameron",
-        "cover_thumb": "book/cover_thumb/boccaccio-dekameron_hp1UtVH.jpg",
+        "cover_thumb": "book/cover_thumb/boccaccio-dekameron_7l9uVpj.jpg",
         "liked": null
     },
     {
@@ -14910,6 +14927,23 @@
     },
     {
         "kind": "Epika",
+        "full_sort_key": "carroll lewis$alicja w krainie czaro~0w$8456",
+        "title": "Alicja w Krainie Czarów",
+        "url": "https://wolnelektury.pl/katalog/lektura/carroll-alicja-w-krainie-czarow/",
+        "cover_color": "#961060",
+        "author": "Lewis Carroll",
+        "cover": "book/cover/carroll-alicja-w-krainie-czarow.jpg",
+        "epoch": "Pozytywizm",
+        "href": "https://wolnelektury.pl/api/books/carroll-alicja-w-krainie-czarow/",
+        "has_audio": false,
+        "genre": "Baśń",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/carroll-alicja-w-krainie-czarow_2jdJR1R.jpg",
+        "slug": "carroll-alicja-w-krainie-czarow",
+        "cover_thumb": "book/cover_thumb/carroll-alicja-w-krainie-czarow_Yqgdnfq.jpg",
+        "liked": null
+    },
+    {
+        "kind": "Epika",
         "full_sort_key": "casanova giacomo giovanni$od kobiety do kobiety$7661",
         "title": "Od kobiety do kobiety",
         "url": "https://wolnelektury.pl/katalog/lektura/cassanova-de-seingalt-od-kobiety-do-kobiety/",
@@ -18167,9 +18201,9 @@
         "href": "https://wolnelektury.pl/api/books/dekameron-dzien-czwarty/",
         "has_audio": false,
         "genre": "Nowela",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-czwarty_Us6orz0.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-czwarty_B1SHG8j.jpg",
         "slug": "dekameron-dzien-czwarty",
-        "cover_thumb": "book/cover_thumb/dekameron-dzien-czwarty_MYjbYXN.jpg",
+        "cover_thumb": "book/cover_thumb/dekameron-dzien-czwarty_lp91YCZ.jpg",
         "liked": null
     },
     {
@@ -18184,9 +18218,9 @@
         "href": "https://wolnelektury.pl/api/books/dekameron-dzien-drugi/",
         "has_audio": false,
         "genre": "Nowela",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-drugi_pnSNP3R.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-drugi_hb02ZWi.jpg",
         "slug": "dekameron-dzien-drugi",
-        "cover_thumb": "book/cover_thumb/dekameron-dzien-drugi_w9tQ0oh.jpg",
+        "cover_thumb": "book/cover_thumb/dekameron-dzien-drugi_YSrMZXM.jpg",
         "liked": null
     },
     {
@@ -18201,9 +18235,9 @@
         "href": "https://wolnelektury.pl/api/books/dekameron-dzien-dziesiaty/",
         "has_audio": false,
         "genre": "Nowela",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-dziesiaty_xQ2PyvA.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-dziesiaty_SCuoPrr.jpg",
         "slug": "dekameron-dzien-dziesiaty",
-        "cover_thumb": "book/cover_thumb/dekameron-dzien-dziesiaty_G9DbOyq.jpg",
+        "cover_thumb": "book/cover_thumb/dekameron-dzien-dziesiaty_3pmF8g8.jpg",
         "liked": null
     },
     {
@@ -18218,9 +18252,9 @@
         "href": "https://wolnelektury.pl/api/books/dekameron-dzien-dziewiaty/",
         "has_audio": false,
         "genre": "Nowela",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-dziewiaty_XwJSEdt.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-dziewiaty_6pXOukV.jpg",
         "slug": "dekameron-dzien-dziewiaty",
-        "cover_thumb": "book/cover_thumb/dekameron-dzien-dziewiaty_8sIcRL0.jpg",
+        "cover_thumb": "book/cover_thumb/dekameron-dzien-dziewiaty_KIs502T.jpg",
         "liked": null
     },
     {
@@ -18235,9 +18269,9 @@
         "href": "https://wolnelektury.pl/api/books/dekameron-dzien-osmy/",
         "has_audio": false,
         "genre": "Nowela",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-osmy_Uf8mODS.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-osmy_Wv5u3P7.jpg",
         "slug": "dekameron-dzien-osmy",
-        "cover_thumb": "book/cover_thumb/dekameron-dzien-osmy_eWEQPuB.jpg",
+        "cover_thumb": "book/cover_thumb/dekameron-dzien-osmy_lUJBUH0.jpg",
         "liked": null
     },
     {
@@ -18252,15 +18286,15 @@
         "href": "https://wolnelektury.pl/api/books/dekameron-dzien-piaty/",
         "has_audio": true,
         "genre": "Nowela",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-piaty_1gIM9SE.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-piaty_oXnI0Ds.jpg",
         "slug": "dekameron-dzien-piaty",
-        "cover_thumb": "book/cover_thumb/dekameron-dzien-piaty_XYLSTmC.jpg",
+        "cover_thumb": "book/cover_thumb/dekameron-dzien-piaty_6rVRo1I.jpg",
         "liked": null
     },
     {
         "kind": "Epika",
         "full_sort_key": "boccaccio giovanni$dekameron dzien~0 pierwszy$3370",
-        "title": "Dekameron,  Dzień pierwszy",
+        "title": "Dekameron, Dzień pierwszy",
         "url": "https://wolnelektury.pl/katalog/lektura/dekameron-dzien-pierwszy/",
         "cover_color": "#8ca629",
         "author": "Giovanni Boccaccio",
@@ -18269,9 +18303,9 @@
         "href": "https://wolnelektury.pl/api/books/dekameron-dzien-pierwszy/",
         "has_audio": false,
         "genre": "Nowela",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-pierwszy_PLe3Rxw.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-pierwszy_AaeOflS.jpg",
         "slug": "dekameron-dzien-pierwszy",
-        "cover_thumb": "book/cover_thumb/dekameron-dzien-pierwszy_Nked6qb.jpg",
+        "cover_thumb": "book/cover_thumb/dekameron-dzien-pierwszy_sqrFr7t.jpg",
         "liked": null
     },
     {
@@ -18286,9 +18320,9 @@
         "href": "https://wolnelektury.pl/api/books/dekameron-dzien-siodmy/",
         "has_audio": false,
         "genre": "Nowela",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-siodmy_OwE0OJL.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-siodmy_CHKp5fV.jpg",
         "slug": "dekameron-dzien-siodmy",
-        "cover_thumb": "book/cover_thumb/dekameron-dzien-siodmy_PpYuqrO.jpg",
+        "cover_thumb": "book/cover_thumb/dekameron-dzien-siodmy_YNJeyMM.jpg",
         "liked": null
     },
     {
@@ -18303,9 +18337,9 @@
         "href": "https://wolnelektury.pl/api/books/dekameron-dzien-szosty/",
         "has_audio": false,
         "genre": "Nowela",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-szosty_QxVDts7.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-szosty_cbGnp0t.jpg",
         "slug": "dekameron-dzien-szosty",
-        "cover_thumb": "book/cover_thumb/dekameron-dzien-szosty_pvRYoWt.jpg",
+        "cover_thumb": "book/cover_thumb/dekameron-dzien-szosty_aNzpvPA.jpg",
         "liked": null
     },
     {
@@ -18320,9 +18354,9 @@
         "href": "https://wolnelektury.pl/api/books/dekameron-dzien-trzeci/",
         "has_audio": false,
         "genre": "Nowela",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-trzeci_BE0DJ5z.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-dzien-trzeci_RkRhq0z.jpg",
         "slug": "dekameron-dzien-trzeci",
-        "cover_thumb": "book/cover_thumb/dekameron-dzien-trzeci_BxBrAOP.jpg",
+        "cover_thumb": "book/cover_thumb/dekameron-dzien-trzeci_inKGUSC.jpg",
         "liked": null
     },
     {
@@ -18337,9 +18371,9 @@
         "href": "https://wolnelektury.pl/api/books/dekameron-prolog/",
         "has_audio": false,
         "genre": "Nowela",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-prolog_PCxvysG.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dekameron-prolog_TCNeMwl.jpg",
         "slug": "dekameron-prolog",
-        "cover_thumb": "book/cover_thumb/dekameron-prolog_86NfLfY.jpg",
+        "cover_thumb": "book/cover_thumb/dekameron-prolog_S5uc2Ko.jpg",
         "liked": null
     },
     {
@@ -19984,7 +20018,7 @@
         "cover": "book/cover/doyle-czlowiek-z-blizna.jpg",
         "epoch": "Modernizm",
         "href": "https://wolnelektury.pl/api/books/doyle-czlowiek-z-blizna/",
-        "has_audio": false,
+        "has_audio": true,
         "genre": "Opowiadanie",
         "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/doyle-czlowiek-z-blizna_gG5tJeX.jpg",
         "slug": "doyle-czlowiek-z-blizna",
@@ -21998,23 +22032,6 @@
         "liked": null
     },
     {
-        "kind": "Epika",
-        "full_sort_key": "korczak janusz$dziecko w rodzinie$4332",
-        "title": "Dziecko w rodzinie",
-        "url": "https://wolnelektury.pl/katalog/lektura/dziecko-w-rodzinie/",
-        "cover_color": "#3044cf",
-        "author": "Janusz Korczak",
-        "cover": "book/cover/dziecko-w-rodzinie.jpg",
-        "epoch": "Dwudziestolecie międzywojenne",
-        "href": "https://wolnelektury.pl/api/books/dziecko-w-rodzinie/",
-        "has_audio": false,
-        "genre": "Esej",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dziecko-w-rodzinie_bZ6RFO0.jpg",
-        "slug": "dziecko-w-rodzinie",
-        "cover_thumb": "book/cover_thumb/dziecko-w-rodzinie_edESioX.jpg",
-        "liked": null
-    },
-    {
         "kind": "Liryka",
         "full_sort_key": "les~0mian bolesl~0aw$dziejba les~0na tomik $2346",
         "title": "Dziejba leśna (tomik)",
@@ -22740,9 +22757,9 @@
         "href": "https://wolnelektury.pl/api/books/dziejba-lesna-sen-wiejski/",
         "has_audio": true,
         "genre": "Wiersz",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dziejba-lesna-sen-wiejski_GuCglF7.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dziejba-lesna-sen-wiejski_yQfGzEd.jpg",
         "slug": "dziejba-lesna-sen-wiejski",
-        "cover_thumb": "book/cover_thumb/dziejba-lesna-sen-wiejski_F8Yauvz.jpg",
+        "cover_thumb": "book/cover_thumb/dziejba-lesna-sen-wiejski_TBdWhp4.jpg",
         "liked": null
     },
     {
@@ -46623,7 +46640,7 @@
         "cover": "book/cover/kipling-puk-z-pukowej-gorki.jpg",
         "epoch": "Współczesność",
         "href": "https://wolnelektury.pl/api/books/kipling-puk-z-pukowej-gorki/",
-        "has_audio": false,
+        "has_audio": true,
         "genre": "powieść dla dzieci i młodzieży",
         "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/kipling-puk-z-pukowej-gorki_4IyeIcT.jpg",
         "slug": "kipling-puk-z-pukowej-gorki",
@@ -51728,6 +51745,23 @@
         "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/korczak-feralny-tydzien_u6Sh5MJ.jpg",
         "slug": "korczak-feralny-tydzien",
         "cover_thumb": "book/cover_thumb/korczak-feralny-tydzien_y1FERHl.jpg",
+        "liked": null
+    },
+    {
+        "kind": "Epika",
+        "full_sort_key": "korczak janusz$jak kochac dziecko dziecko w rodzinie$4332",
+        "title": "Jak kochac dziecko. Dziecko w rodzinie",
+        "url": "https://wolnelektury.pl/katalog/lektura/korczak-jak-kochac-dziecko-dziecko-w-rodzinie/",
+        "cover_color": "#3044cf",
+        "author": "Janusz Korczak",
+        "cover": "book/cover/dziecko-w-rodzinie.jpg",
+        "epoch": "Dwudziestolecie międzywojenne",
+        "href": "https://wolnelektury.pl/api/books/korczak-jak-kochac-dziecko-dziecko-w-rodzinie/",
+        "has_audio": false,
+        "genre": "Esej",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/dziecko-w-rodzinie_bZ6RFO0.jpg",
+        "slug": "korczak-jak-kochac-dziecko-dziecko-w-rodzinie",
+        "cover_thumb": "book/cover_thumb/dziecko-w-rodzinie_edESioX.jpg",
         "liked": null
     },
     {
@@ -64305,9 +64339,9 @@
         "href": "https://wolnelektury.pl/api/books/makuszynski-szatan-z-siodmej-klasy/",
         "has_audio": false,
         "genre": "powieść dla dzieci i młodzieży",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/makuszynski-szatan-z-siodmej-klasy_sjQD0gU.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/makuszynski-szatan-z-siodmej-klasy_TYyDt47.jpg",
         "slug": "makuszynski-szatan-z-siodmej-klasy",
-        "cover_thumb": "book/cover_thumb/makuszynski-szatan-z-siodmej-klasy_lmZnLVi.jpg",
+        "cover_thumb": "book/cover_thumb/makuszynski-szatan-z-siodmej-klasy_NbNC412.jpg",
         "liked": null
     },
     {
@@ -90060,9 +90094,9 @@
         "href": "https://wolnelektury.pl/api/books/potop/",
         "has_audio": true,
         "genre": "powieść historyczna",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/potop_MpxYCwX.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/potop_N5MnJ1m.jpg",
         "slug": "potop",
-        "cover_thumb": "book/cover_thumb/potop_Yi1LD9j.jpg",
+        "cover_thumb": "book/cover_thumb/potop_ptYWC0E.jpg",
         "liked": null
     },
     {
@@ -114880,9 +114914,9 @@
         "href": "https://wolnelektury.pl/api/books/tuwim-czyhanie-na-boga/",
         "has_audio": false,
         "genre": "Wiersz",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/tuwim-czyhanie-na-boga_7p8LqQz.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/tuwim-czyhanie-na-boga_wucV5ho.jpg",
         "slug": "tuwim-czyhanie-na-boga",
-        "cover_thumb": "book/cover_thumb/tuwim-czyhanie-na-boga_GWDTB1r.jpg",
+        "cover_thumb": "book/cover_thumb/tuwim-czyhanie-na-boga_BHta65D.jpg",
         "liked": null
     },
     {
@@ -115339,9 +115373,9 @@
         "href": "https://wolnelektury.pl/api/books/tuwim-madrosc/",
         "has_audio": false,
         "genre": "Wiersz",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/tuwim-madrosc_FLrIlJ6.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/tuwim-madrosc_FHNFrUC.jpg",
         "slug": "tuwim-madrosc",
-        "cover_thumb": "book/cover_thumb/tuwim-madrosc_HDC1rls.jpg",
+        "cover_thumb": "book/cover_thumb/tuwim-madrosc_rW4xiEr.jpg",
         "liked": null
     },
     {
@@ -115407,9 +115441,9 @@
         "href": "https://wolnelektury.pl/api/books/tuwim-melancholja-stojacych-przy-scianie/",
         "has_audio": false,
         "genre": "Wiersz",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/tuwim-melancholja-stojacych-przy-scianie_shRUWap.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/tuwim-melancholja-stojacych-przy-scianie_Iy0pU9i.jpg",
         "slug": "tuwim-melancholja-stojacych-przy-scianie",
-        "cover_thumb": "book/cover_thumb/tuwim-melancholja-stojacych-przy-scianie_Q38uDJj.jpg",
+        "cover_thumb": "book/cover_thumb/tuwim-melancholja-stojacych-przy-scianie_kMRMX5Z.jpg",
         "liked": null
     },
     {
@@ -116571,7 +116605,7 @@
     {
         "kind": "Liryka",
         "full_sort_key": "tuwim julian$ z~1ycie rozpre~0z~1e~0 szeroko ramiona $8431",
-        "title": "[Życie? --- rozprężę szeroko ramiona...]",
+        "title": "[Życie? — rozprężę szeroko ramiona...]",
         "url": "https://wolnelektury.pl/katalog/lektura/tuwim-zycie-rozpreze-szeroko-ramiona/",
         "cover_color": "#06393d",
         "author": "Julian Tuwim",
@@ -116580,9 +116614,9 @@
         "href": "https://wolnelektury.pl/api/books/tuwim-zycie-rozpreze-szeroko-ramiona/",
         "has_audio": false,
         "genre": "Wiersz",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/tuwim-zycie-rozpreze-szeroko-ramiona_JXwTrr0.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/tuwim-zycie-rozpreze-szeroko-ramiona_l3KNycO.jpg",
         "slug": "tuwim-zycie-rozpreze-szeroko-ramiona",
-        "cover_thumb": "book/cover_thumb/tuwim-zycie-rozpreze-szeroko-ramiona_gv1neWA.jpg",
+        "cover_thumb": "book/cover_thumb/tuwim-zycie-rozpreze-szeroko-ramiona_ECzUEiT.jpg",
         "liked": null
     },
     {
@@ -122751,9 +122785,9 @@
         "href": "https://wolnelektury.pl/api/books/wolter-bialy-byk/",
         "has_audio": false,
         "genre": "Powiastka filozoficzna",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/wolter-bialy-byk_f9byBIw.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/wolter-bialy-byk_maDyk58.jpg",
         "slug": "wolter-bialy-byk",
-        "cover_thumb": "book/cover_thumb/wolter-bialy-byk_fSpkh88.jpg",
+        "cover_thumb": "book/cover_thumb/wolter-bialy-byk_M1Nwn6H.jpg",
         "liked": null
     },
     {
@@ -125845,9 +125879,9 @@
         "href": "https://wolnelektury.pl/api/books/zlote-sidla/",
         "has_audio": false,
         "genre": "powieść dla dzieci i młodzieży",
-        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/zlote-sidla_x5XxfuU.jpg",
+        "simple_thumb": "https://wolnelektury.pl/media/book/cover_api_thumb/zlote-sidla_OROhSB1.jpg",
         "slug": "zlote-sidla",
-        "cover_thumb": "book/cover_thumb/zlote-sidla_m1LHkAM.jpg",
+        "cover_thumb": "book/cover_thumb/zlote-sidla_4bqrLmc.jpg",
         "liked": null
     },
     {

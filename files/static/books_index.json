@@ -5395,6 +5395,19 @@
         "path_to_file": null
     },
     {
+        "full_sort_key": "balzac honore~0 de$gabinet staroz~1ytnos~0ci$8455",
+        "title": "Gabinet Starożytności",
+        "author": "Honoré de Balzac",
+        "kind": "Epika",
+        "epoch": "Romantyzm",
+        "genre": "Powieść",
+        "url": "https://wolnelektury.pl/katalog/lektura/balzac-gabinet-starozytnosci/",
+        "href": "https://wolnelektury.pl/api/books/balzac-gabinet-starozytnosci/",
+        "slug": "balzac-gabinet-starozytnosci",
+        "downloaded": false,
+        "path_to_file": null
+    },
+    {
         "full_sort_key": "balzac honore~0 de$granatka$3620",
         "title": "Granatka",
         "author": "Honoré de Balzac",
@@ -11401,6 +11414,19 @@
         "path_to_file": null
     },
     {
+        "full_sort_key": "carroll lewis$alicja w krainie czaro~0w$8456",
+        "title": "Alicja w Krainie Czarów",
+        "author": "Lewis Carroll",
+        "kind": "Epika",
+        "epoch": "Pozytywizm",
+        "genre": "Baśń",
+        "url": "https://wolnelektury.pl/katalog/lektura/carroll-alicja-w-krainie-czarow/",
+        "href": "https://wolnelektury.pl/api/books/carroll-alicja-w-krainie-czarow/",
+        "slug": "carroll-alicja-w-krainie-czarow",
+        "downloaded": false,
+        "path_to_file": null
+    },
+    {
         "full_sort_key": "casanova giacomo giovanni$od kobiety do kobiety$7661",
         "title": "Od kobiety do kobiety",
         "author": "Giacomo Giovanni Casanova",
@@ -13963,7 +13989,7 @@
     },
     {
         "full_sort_key": "boccaccio giovanni$dekameron dzien~0 pierwszy$3370",
-        "title": "Dekameron,  Dzień pierwszy",
+        "title": "Dekameron, Dzień pierwszy",
         "author": "Giovanni Boccaccio",
         "kind": "Epika",
         "epoch": "Renesans",
@@ -16818,19 +16844,6 @@
         "url": "https://wolnelektury.pl/katalog/lektura/dzieci-na-wsi-i-w-miescie/",
         "href": "https://wolnelektury.pl/api/books/dzieci-na-wsi-i-w-miescie/",
         "slug": "dzieci-na-wsi-i-w-miescie",
-        "downloaded": false,
-        "path_to_file": null
-    },
-    {
-        "full_sort_key": "korczak janusz$dziecko w rodzinie$4332",
-        "title": "Dziecko w rodzinie",
-        "author": "Janusz Korczak",
-        "kind": "Epika",
-        "epoch": "Dwudziestolecie międzywojenne",
-        "genre": "Esej",
-        "url": "https://wolnelektury.pl/katalog/lektura/dziecko-w-rodzinie/",
-        "href": "https://wolnelektury.pl/api/books/dziecko-w-rodzinie/",
-        "slug": "dziecko-w-rodzinie",
         "downloaded": false,
         "path_to_file": null
     },
@@ -39555,6 +39568,19 @@
         "url": "https://wolnelektury.pl/katalog/lektura/korczak-feralny-tydzien/",
         "href": "https://wolnelektury.pl/api/books/korczak-feralny-tydzien/",
         "slug": "korczak-feralny-tydzien",
+        "downloaded": false,
+        "path_to_file": null
+    },
+    {
+        "full_sort_key": "korczak janusz$jak kochac dziecko dziecko w rodzinie$4332",
+        "title": "Jak kochac dziecko. Dziecko w rodzinie",
+        "author": "Janusz Korczak",
+        "kind": "Epika",
+        "epoch": "Dwudziestolecie międzywojenne",
+        "genre": "Esej",
+        "url": "https://wolnelektury.pl/katalog/lektura/korczak-jak-kochac-dziecko-dziecko-w-rodzinie/",
+        "href": "https://wolnelektury.pl/api/books/korczak-jak-kochac-dziecko-dziecko-w-rodzinie/",
+        "slug": "korczak-jak-kochac-dziecko-dziecko-w-rodzinie",
         "downloaded": false,
         "path_to_file": null
     },
@@ -89142,7 +89168,7 @@
     },
     {
         "full_sort_key": "tuwim julian$ z~1ycie rozpre~0z~1e~0 szeroko ramiona $8431",
-        "title": "[Życie? --- rozprężę szeroko ramiona...]",
+        "title": "[Życie? — rozprężę szeroko ramiona...]",
         "author": "Julian Tuwim",
         "kind": "Liryka",
         "epoch": "Współczesność",
