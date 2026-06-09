@@ -14,6 +14,11 @@ class BookDetail:
 
     @staticmethod
     def from_api_dict(data: dict) -> "BookDetail":
+        """
+        Konstruktor fabryczny. Tworzy instancję klasy BookDetail na podstawie surowych danych z API Wolnych Lektur.
+        :param data:
+        :return:
+        """
         return BookDetail(
             title=data.get("title"),
             txt_url=data.get("txt"),
