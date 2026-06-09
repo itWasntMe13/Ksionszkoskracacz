@@ -1,10 +1,10 @@
-from aiohttp.web_routedef import static
 
-from core.config.config import BOOKS_INDEX_PATH
 from core.models.books.book_index import BookIndex
-from core.services.books.book_index_service import BookIndexService
 
 class BookBrowsingService:
+    """
+    Zwraca indeks szukanej książki na podstawie danych autora i tytułu lub dowolnej jednej z tych danych.
+    """
     @staticmethod
     def filter_books(
         books: list[BookIndex], author_q: str = "", title_q: str = ""

@@ -23,7 +23,13 @@ class BookDetail:
         )
 
     @staticmethod
-    def from_json_dict(data: dict) -> "BookDetail":
+    def from_dict(data: dict) -> "BookDetail":
+        """
+            Konstruktor fabryczny. Tworzy instancję klasy BookDetail na podstawie słownika danych przekazanego w parametrze.
+            Metoda służy m.in. do utworzenia obiektu na podstawie słownika uzyskanego po deserializacji pliku JSON.
+            :param data: dict
+            :return: BookDetail
+        """
         return BookDetail(
             slug=data.get("slug"),
             title=data.get("title"),
@@ -35,6 +41,10 @@ class BookDetail:
         )
 
     def to_dict(self) -> dict:
+        """
+            Dokonuje eksportu stanu obiektu do słownika. Metoda służy, np. do przygotowania danych w formacie słownika do dalszej serializacji do formatu JSON.
+            :return: dict
+            """
         return {
             "slug": self.slug,
             "title": self.title,

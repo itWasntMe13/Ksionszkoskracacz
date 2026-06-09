@@ -19,10 +19,10 @@ class BookDetailService:
         file_path = load_directory / f"{book_index.slug}.json"
 
         # Wczytujemy dane z pliku JSON
-        book_detail = load_json_file(file_path)
+        book_detail_dict = load_json_file(file_path)
 
         # Tworzymy obiekt BookDetail
-        book_detail = BookDetail.from_json_dict(book_detail)
+        book_detail = BookDetail.from_dict(book_detail_dict)
         return book_detail
 
     @staticmethod

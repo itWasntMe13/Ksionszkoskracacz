@@ -17,6 +17,10 @@ class Book:
     motifs: str = None
 
     def to_dict(self) -> dict:
+        """
+        Dokonuje eksportu stanu obiektu do słownika. Metoda służy, np. do przygotowania danych w formacie słownika do dalszej serializacji do formatu JSON.
+        :return: dict
+        """
         return {
             "slug": self.slug,
             "title": self.title,
@@ -34,6 +38,12 @@ class Book:
 
     @staticmethod
     def from_dict(data: dict) -> "Book":
+        """
+        Konstruktor fabryczny. Tworzy instancję klasy Book na podstawie słownika danych przekazanego w paarametrze.
+        Metoda służy, np. do utworzenia obiektu typu Book na podstawie słownika utworzonego podczas deserializacji pliku JSON.
+        :param data:
+        :return:
+        """
         return Book(
             slug=data.get("slug"),
             title=data.get("title"),
